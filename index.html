@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Paul's High School | Homepage Redesign Mockups</title>
+  <meta name="description" content="Client Review Hub: Homepage Design Mockups for St. Paul's High School (Belgaum)">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Outfit"', 'sans-serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .device-screen {
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans flex flex-col h-screen overflow-hidden selection:bg-amber-400 selection:text-slate-900">
+
+  <!-- TOP HUB CONTROL BAR -->
+  <header class="bg-slate-950 border-b border-slate-800 px-4 py-2.5 flex-shrink-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand & Project Title -->
+      <div class="flex items-center space-x-3">
+        <img src="images/SPHS-Logo.png" alt="SPHS" class="w-8 h-8 object-contain" />
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-black text-sm text-white tracking-tight">ST. PAUL'S HIGH SCHOOL</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+              Mockup Review
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400">Design Concepts &bull; Self-Contained Bundle</p>
+        </div>
+      </div>
+
+      <!-- Mockup Concept Selector Tabs -->
+      <div class="flex items-center bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs font-semibold">
+        <button onclick="loadMockup('mockup1.html', this, 'Prestige Heritage & Classic Grid')" class="mockup-tab active px-3.5 py-1.5 rounded-lg bg-blue-600 text-white font-bold transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-crown text-[11px]"></i>
+          <span>1. Prestige Heritage</span>
+        </button>
+        <button onclick="loadMockup('mockup3.html', this, 'Editorial Academic Broadsheet')" class="mockup-tab px-3.5 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-newspaper text-[11px]"></i>
+          <span>3. Editorial Broadsheet</span>
+        </button>
+      </div>
+
+      <!-- Device Viewport Switcher & Direct Links -->
+      <div class="flex items-center space-x-2">
+        <div class="hidden sm:flex items-center bg-slate-800/80 p-1 rounded-lg border border-slate-700 text-xs text-slate-400">
+          <button onclick="setDevice('desktop')" id="btn-desktop" class="p-1.5 px-2 rounded bg-slate-700 text-white transition-colors" title="Desktop View (100%)">
+            <i class="fa-solid fa-desktop"></i>
+          </button>
+          <button onclick="setDevice('tablet')" id="btn-tablet" class="p-1.5 px-2 rounded hover:text-white transition-colors" title="Tablet View (768px)">
+            <i class="fa-solid fa-tablet-screen-button"></i>
+          </button>
+          <button onclick="setDevice('mobile')" id="btn-mobile" class="p-1.5 px-2 rounded hover:text-white transition-colors" title="Mobile View (390px)">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </button>
+        </div>
+
+        <a id="open-external-btn" href="mockup1.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow">
+          <span>Open Standalone</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- IFRAME PREVIEW CONTAINER -->
+  <main class="flex-1 bg-slate-900 overflow-hidden flex items-center justify-center p-0 relative">
+    
+    <div id="viewport-frame" class="w-full h-full device-screen flex flex-col bg-white shadow-2xl relative">
+      <!-- Device status bar for mobile/tablet simulation -->
+      <div id="device-bezel-top" class="hidden bg-slate-800 text-slate-300 text-[10px] py-1 px-4 flex justify-between items-center flex-shrink-0">
+        <span id="device-title" class="font-bold">Preview Frame</span>
+        <span id="device-dimensions" class="text-slate-400">Desktop 100%</span>
+      </div>
+
+      <iframe id="preview-iframe" src="mockup1.html" class="w-full flex-1 border-0" title="St. Paul's High School Redesign Mockup"></iframe>
+    </div>
+
+  </main>
+
+  <script>
+    let currentMockup = 'mockup1.html';
+    let currentDevice = 'desktop';
+
+    function loadMockup(url, btnElement, conceptTitle) {
+      currentMockup = url;
+      const iframe = document.getElementById('preview-iframe');
+      iframe.src = url;
+
+      // Update active tab style
+      document.querySelectorAll('.mockup-tab').forEach(tab => {
+        tab.classList.remove('bg-blue-600', 'text-white', 'shadow-sm', 'active');
+        tab.classList.add('text-slate-300');
+      });
+      btnElement.classList.add('bg-blue-600', 'text-white', 'shadow-sm', 'active');
+      btnElement.classList.remove('text-slate-300');
+
+      // Update external link
+      const openBtn = document.getElementById('open-external-btn');
+      openBtn.href = url;
+    }
+
+    function setDevice(device) {
+      currentDevice = device;
+      const frame = document.getElementById('viewport-frame');
+      const bezel = document.getElementById('device-bezel-top');
+      const dimText = document.getElementById('device-dimensions');
+
+      const btnD = document.getElementById('btn-desktop');
+      const btnT = document.getElementById('btn-tablet');
+      const btnM = document.getElementById('btn-mobile');
+
+      [btnD, btnT, btnM].forEach(b => {
+        b.classList.remove('bg-slate-700', 'text-white');
+        b.classList.add('hover:text-white');
+      });
+
+      if (device === 'desktop') {
+        btnD.classList.add('bg-slate-700', 'text-white');
+        frame.style.width = '100%';
+        frame.style.height = '100%';
+        frame.style.borderRadius = '0px';
+        frame.style.border = 'none';
+        bezel.classList.add('hidden');
+      } else if (device === 'tablet') {
+        btnT.classList.add('bg-slate-700', 'text-white');
+        frame.style.width = '768px';
+        frame.style.height = '92%';
+        frame.style.borderRadius = '16px';
+        frame.style.border = '8px solid #1e293b';
+        bezel.classList.remove('hidden');
+        dimText.innerText = 'Tablet (768px)';
+      } else if (device === 'mobile') {
+        btnM.classList.add('bg-slate-700', 'text-white');
+        frame.style.width = '390px';
+        frame.style.height = '94%';
+        frame.style.borderRadius = '24px';
+        frame.style.border = '10px solid #1e293b';
+        bezel.classList.remove('hidden');
+        dimText.innerText = 'Mobile (390px)';
+      }
+    }
+  </script>
+</body>
+</html>

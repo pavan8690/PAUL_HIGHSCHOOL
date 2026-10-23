@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Paul's High School, Belgaum | Pixel-Accurate Redesign</title>
+  <meta name="description" content="Official website of St. Paul's High School, Belgaum (Estd. 1856). 170 years of service and dedication to society. Society of Jesus.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/SPHS-Logo.png">
+
+  <!-- Google Fonts: Playfair Display for classic serif headings, Inter for clean UI, Alex Brush for elegant script, Cinzel for Roman headers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#082A4B',
+              dark: '#041C35',
+              deep: '#031E39',
+              light: '#0E3A66'
+            },
+            maroon: {
+              DEFAULT: '#950F2A',
+              dark: '#780B23',
+              deep: '#820B24',
+              light: '#A91432',
+              roseBg: '#FDF2F4',
+              roseBorder: '#FADCE2'
+            },
+            gold: {
+              DEFAULT: '#FFBE2E',
+              dark: '#D99B16',
+              light: '#FFD166',
+              warm: '#F4A024'
+            },
+            cream: {
+              DEFAULT: '#FFF9F0',
+              light: '#FFFDF9',
+              warm: '#FAF4EC'
+            },
+            paper: '#FFFCF8',
+            lightBlue: '#EAF4FF',
+            sphsText: '#102B49',
+            sphsMuted: '#64748B',
+            sphsBorder: '#E6E8EB'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            script: ['"Alex Brush"', 'cursive'],
+            cinzel: ['"Cinzel"', 'serif']
+          },
+          boxShadow: {
+            'card': '0 4px 20px -2px rgba(8, 42, 75, 0.08), 0 2px 6px -1px rgba(8, 42, 75, 0.04)',
+            'floating': '0 12px 36px -6px rgba(8, 42, 75, 0.14), 0 4px 12px -2px rgba(8, 42, 75, 0.06)',
+            'button': '0 4px 14px 0 rgba(130, 11, 36, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --navy: #082A4B;
+      --navy-dark: #041C35;
+      --maroon: #950F2A;
+      --maroon-dark: #780B23;
+      --maroon-deep: #820B24;
+      --gold: #FFBE2E;
+      --cream: #FFF9F0;
+      --paper: #FFFCF8;
+      --light-blue: #EAF4FF;
+      --text: #102B49;
+      --muted: #64748B;
+      --border: #E6E8EB;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #950F2A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #780B23;
+    }
+
+    /* Subtle dotted background pattern */
+    .bg-pattern-dots {
+      background-image: radial-gradient(rgba(8, 42, 75, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+
+    /* Dropdown menu animation */
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .group:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Blended image masks */
+    .mask-feather-left {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    }
+
+    .mask-feather-both {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+  </style>
+</head>
+<body class="bg-paper text-sphsText font-sans antialiased text-[14px] leading-normal selection:bg-maroon selection:text-white overflow-x-hidden">
+
+  <!-- ========================================== -->
+  <!-- 1. SLIM MAROON GRADIENT UTILITY BAR        -->
+  <!-- ========================================== -->
+  <div style="background: linear-gradient(100deg, #820B24 0%, #A91432 55%, #7A0B23 100%);" class="text-white text-[11px] sm:text-[12px] py-1.5 px-4 sm:px-8 border-b border-maroon-dark/40 relative z-50">
+    <div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-2 font-medium">
+      <!-- Left: Sesquicentennial Info -->
+      <div class="flex items-center space-x-2 text-white/95">
+        <i class="fa-regular fa-calendar-check text-gold text-xs"></i>
+        <span>Year 170 • Sesquicentennial • 20 (1856–2026)</span>
+        <span class="text-white/40">|</span>
+        <span class="hidden sm:inline text-white/85">Belgaum, Karnataka, India</span>
+      </div>
+
+      <!-- Right: Direct Quick Portals -->
+      <div class="flex items-center space-x-4 text-[11px] sm:text-[12px]">
+        <a href="https://www.sphsadmissions.in/" target="_blank" class="flex items-center gap-1.5 hover:text-gold transition-colors font-medium">
+          <i class="fa-solid fa-lock text-gold text-[10px]"></i>
+          <span>Online Admissions</span>
+        </a>
+        <span class="text-white/30">|</span>
+        <a href="https://paulhigh.schoolphins.com/student/" target="_blank" class="flex items-center gap-1.5 hover:text-gold transition-colors font-medium">
+          <i class="fa-solid fa-user-graduate text-gold text-[10px]"></i>
+          <span>Student Login</span>
+        </a>
+        <span class="text-white/30">|</span>
+        <a href="https://paulhigh.schoolphins.com/staff/" target="_blank" class="flex items-center gap-1.5 hover:text-gold transition-colors font-medium">
+          <i class="fa-solid fa-user-tie text-gold text-[10px]"></i>
+          <span>Staff Login</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 2. MAIN HEADER & COMPACT NAVIGATION        -->
+  <!-- ========================================== -->
+  <header class="bg-white border-b border-slate-100 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 pt-3 pb-2">
+      
+      <!-- Top Branding Row -->
+      <div class="flex items-center justify-between gap-4">
+        <!-- School Crest & Title -->
+        <a href="mockup3.html" class="flex items-center gap-3.5 group">
+          <img src="images/SPHS-Logo.png" alt="St. Paul's High School Crest" class="w-12 h-12 sm:w-13 sm:h-13 object-contain shrink-0 group-hover:scale-105 transition-transform" />
+          <div class="space-y-0.5">
+            <h1 class="font-serif font-black text-xl sm:text-2xl lg:text-[25px] text-navy tracking-tight leading-none">
+              ST. PAUL’S HIGH SCHOOL
+            </h1>
+            <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-sphsMuted font-medium leading-tight">
+              THE OFFICIAL SITE OF ST. PAUL'S HIGH SCHOOL (BELGAUM) • SOCIETY OF JESUS • ESTD. 1856
+            </p>
+          </div>
+        </a>
+
+        <!-- Right Side: Search Icon + Online Admissions Button -->
+        <div class="flex items-center gap-3">
+          <!-- Search trigger button -->
+          <button id="search-toggle-btn" aria-label="Search" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-navy hover:border-slate-400 hover:bg-slate-50 transition">
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+          </button>
+
+          <!-- Online Admissions CTA Button -->
+          <a href="https://www.sphsadmissions.in/" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#820B24] hover:bg-[#950F2A] text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-sm hover:shadow transition-all group">
+            <span>Online Admissions</span>
+            <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-btn" aria-label="Toggle Navigation" class="md:hidden w-9 h-9 flex items-center justify-center text-navy rounded-lg border border-slate-200 hover:bg-slate-50">
+            <i class="fa-solid fa-bars text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Row (Neat horizontal line sitting below branding) -->
+      <nav class="hidden md:flex items-center space-x-7 pt-2.5 pb-0.5 text-[13px] font-semibold tracking-wide text-slate-700">
+        
+        <!-- Home (Active) -->
+        <a href="mockup3.html" class="text-maroon font-bold border-b-2 border-maroon pb-1 transition-colors">
+          Home
+        </a>
+
+        <!-- About Us Dropdown -->
+        <div class="relative group">
+          <a href="about-us/index.html" class="flex items-center gap-1.5 py-1 hover:text-maroon transition-colors">
+            <span>About Us</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-hover:text-maroon transition-colors"></i>
+          </a>
+          <div class="dropdown-menu absolute top-full left-0 w-60 bg-white rounded-xl shadow-xl border border-slate-100 py-2.5 z-50 text-[12.5px] font-normal">
+            <a href="about-us/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">About SPHS Overview</a>
+            <a href="about-us/history-of-st-pauls/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">History of St. Paul's</a>
+            <a href="about-us/vision-and-mission/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Vision & Mission</a>
+            <a href="about-us/management/society-of-jesus/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Society of Jesus</a>
+            <a href="about-us/management/principal/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Principal's Desk</a>
+          </div>
+        </div>
+
+        <!-- Member Institutions Dropdown -->
+        <div class="relative group">
+          <a href="academics/member-institutions/index.html" class="flex items-center gap-1.5 py-1 hover:text-maroon transition-colors">
+            <span>Member Institutions</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-hover:text-maroon transition-colors"></i>
+          </a>
+          <div class="dropdown-menu absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-2.5 z-50 text-[12.5px] font-normal">
+            <a href="academics/member-institutions/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">All Member Institutions</a>
+            <a href="academics/member-institutions/index.html#inigo" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Inigo Play School</a>
+            <a href="academics/member-institutions/index.html#sunbeam" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Sunbeam Nursery</a>
+            <a href="academics/member-institutions/index.html#icse" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">St. Paul's Jesuit School (ICSE)</a>
+            <a href="academics/member-institutions/index.html#sslc" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">St. Paul's High School (SSLC)</a>
+            <a href="academics/member-institutions/index.html#puc" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">St. Paul's PU College (PUC)</a>
+          </div>
+        </div>
+
+        <!-- Academics Dropdown -->
+        <div class="relative group">
+          <a href="academics/index.html" class="flex items-center gap-1.5 py-1 hover:text-maroon transition-colors">
+            <span>Academics</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-hover:text-maroon transition-colors"></i>
+          </a>
+          <div class="dropdown-menu absolute top-full left-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2.5 z-50 text-[12.5px] font-normal">
+            <a href="academics/index.html" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Curriculum & Rules</a>
+            <a href="academics/index.html#curriculum" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Syllabus & Grading</a>
+            <a href="academics/index.html#calendar" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Academic Calendar</a>
+          </div>
+        </div>
+
+        <!-- Extracurriculars Dropdown -->
+        <div class="relative group">
+          <a href="extracurriculars/index.html" class="flex items-center gap-1.5 py-1 hover:text-maroon transition-colors">
+            <span>Extracurriculars</span>
+            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-hover:text-maroon transition-colors"></i>
+          </a>
+          <div class="dropdown-menu absolute top-full left-0 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2.5 z-50 text-[12.5px] font-normal">
+            <a href="extracurriculars/index.html#scouts" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Scouts & Guides</a>
+            <a href="extracurriculars/index.html#ncc" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">NCC Army Wing</a>
+            <a href="extracurriculars/index.html#sports" class="block px-4 py-1.5 hover:bg-rose-50 hover:text-maroon">Sports & Athletics</a>
+          </div>
+        </div>
+
+        <a href="news-and-events/index.html" class="py-1 hover:text-maroon transition-colors">
+          News & Events
+        </a>
+
+        <a href="alumni/index.html" class="py-1 hover:text-maroon transition-colors">
+          Alumni
+        </a>
+
+        <a href="gallery-pics/index.html" class="py-1 hover:text-maroon transition-colors">
+          Gallery
+        </a>
+
+        <a href="contact-us/index.html" class="py-1 hover:text-maroon transition-colors">
+          Contact
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3 text-sm font-semibold">
+      <a href="mockup3.html" class="block text-maroon font-bold py-1">Home</a>
+      <a href="about-us/index.html" class="block text-slate-700 hover:text-maroon py-1">About Us</a>
+      <a href="academics/member-institutions/index.html" class="block text-slate-700 hover:text-maroon py-1">Member Institutions</a>
+      <a href="academics/index.html" class="block text-slate-700 hover:text-maroon py-1">Academics</a>
+      <a href="extracurriculars/index.html" class="block text-slate-700 hover:text-maroon py-1">Extracurriculars</a>
+      <a href="news-and-events/index.html" class="block text-slate-700 hover:text-maroon py-1">News & Events</a>
+      <a href="alumni/index.html" class="block text-slate-700 hover:text-maroon py-1">Alumni</a>
+      <a href="gallery-pics/index.html" class="block text-slate-700 hover:text-maroon py-1">Gallery</a>
+      <a href="contact-us/index.html" class="block text-slate-700 hover:text-maroon py-1">Contact</a>
+      <div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
+        <a href="https://www.sphsadmissions.in/" target="_blank" class="w-full text-center bg-maroon text-white py-2 rounded-lg text-xs font-semibold">Online Admissions</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 3. HERO SECTION (THREE-PART COMPOSITION)  -->
+  <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- 3. HERO SECTION (THREE-PART COMPOSITION)  -->
+  <!-- ========================================== -->
+  <section class="relative overflow-hidden pt-6 sm:pt-10 pb-24 sm:pb-32 bg-[#FFFDF9]">
+    
+    <!-- FULL HERO BACKGROUND IMAGE WITH OPACITY GRADIENT -->
+    <div class="absolute inset-0 z-0 pointer-events-none select-none">
+      <img src="images/ref_hero_building.png" 
+           alt="St. Paul's High School Gothic Heritage Stone Building" 
+           class="w-full h-full object-cover object-[center_35%] lg:object-[66%_38%] opacity-85" />
+      
+      <!-- Opacity Gradient: Opaque warm cream on left for readability, smoothly fading to transparent across center and right -->
+      <div class="absolute inset-0" 
+           style="background: linear-gradient(90deg, #FFFDF9 0%, rgba(255, 253, 249, 0.98) 26%, rgba(255, 253, 249, 0.85) 40%, rgba(255, 253, 249, 0.42) 64%, rgba(255, 253, 249, 0.16) 84%, rgba(255, 253, 249, 0.04) 100%),
+                       linear-gradient(180deg, rgba(255, 253, 249, 0.5) 0%, transparent 40%, rgba(255, 253, 249, 0.75) 100%);">
+      </div>
+      
+      <!-- Subtle Golden Sunlight Glow -->
+      <div class="absolute left-[36%] top-[8%] w-[550px] h-[550px] bg-gradient-to-r from-amber-300/30 via-orange-100/20 to-transparent rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Faint Historical Architectural Sketch Behind Hero Center-Bottom -->
+    <img src="images/sphs_architectural_sketch.png" alt="" 
+         class="absolute left-[22%] sm:left-[26%] bottom-4 sm:bottom-6 w-[48%] sm:w-[42%] max-w-[560px] object-contain opacity-20 mix-blend-multiply pointer-events-none z-1" />
+
+    <!-- Main Container -->
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <!-- Flex Layout: Left Narrative (~48%), Right Floating Cards (~32%) -->
+      <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 min-h-[500px] lg:min-h-[540px]">
+        
+        <!-- ========================================== -->
+        <!-- LEFT: Historical Narrative Content (~48%)  -->
+        <!-- ========================================== -->
+        <div class="w-full lg:w-[48%] max-w-xl space-y-4 sm:space-y-4.5 z-20">
+          
+          <!-- Small Label -->
+          <div class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] text-[#B88E38] uppercase">
+            <span>HISTORICAL LEGACY</span>
+            <span class="text-maroon text-xs">•</span>
+            <span>FOUNDED 1856</span>
+          </div>
+
+          <!-- Main Serif Headline -->
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-[44px] leading-[1.12] font-black tracking-tight">
+            <span class="text-navy block">One Hundred and</span>
+            <span class="text-navy block">Seventy Years of Service</span>
+            <span class="text-maroon block">and Dedication to Society.</span>
+          </h2>
+
+          <!-- Descriptive Copy -->
+          <p class="text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed max-w-lg font-normal">
+            St. Paul’s High School has had a glorious past, with a legacy spanning 170 years of service and dedication to society, by not only the founding Fathers–Jesuits, but also through dedicated generations of teachers and Paulite alumni who have left their mark across India and the globe.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="pt-1">
+            <a href="about-us/history-of-st-pauls/index.html" class="inline-flex items-center gap-2.5 bg-[#820B24] hover:bg-[#950F2A] text-white text-[13px] font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all group">
+              <span>Read Complete History</span>
+              <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+
+          <!-- Slider Indicators [Active Red Capsule + 2 Dots] -->
+          <div class="flex items-center gap-1.5 pt-1.5">
+            <span class="w-5 h-1.5 rounded-full bg-[#820B24]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- RIGHT: Three Floating Cards (32%)          -->
+        <!-- ========================================== -->
+        <div class="w-full lg:w-[32%] max-w-[390px] space-y-2.5 z-20">
+          
+          <!-- Card 1: Principal Fr. Eric Mathias SJ -->
+          <article class="bg-white/95 backdrop-blur-xs rounded-xl p-3 sm:p-3.5 border border-slate-200/90 shadow-md hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-start gap-3">
+              <!-- Thumbnail on Left -->
+              <div class="w-16 h-18 sm:w-18 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-slate-200/80 bg-amber-50">
+                <img src="images/ref_card_principal.png" alt="Principal Desk Plaque" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <!-- Text Details on Right -->
+              <div class="flex-1 min-w-0 space-y-0.5">
+                <span class="text-[9px] uppercase font-bold tracking-wider text-maroon block">ADMINISTRATION</span>
+                <h3 class="font-serif font-bold text-[13px] text-navy group-hover:text-maroon transition-colors leading-snug">
+                  Principal: Fr. Eric Mathias SJ
+                </h3>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                  His appointment marks the beginning of a new chapter in the school's journey of academic excellence, holistic formation, and service to society in Belgaum.
+                </p>
+                <div class="pt-1 text-right">
+                  <a href="about-us/management/principal/index.html" class="text-[11px] font-bold text-maroon hover:underline inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                    <span>Read Principal's Profile</span>
+                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Vision and Mission -->
+          <article class="bg-white/95 backdrop-blur-xs rounded-xl p-3 sm:p-3.5 border border-slate-200/90 shadow-md hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-start gap-3">
+              <!-- Thumbnail on Left -->
+              <div class="w-16 h-18 sm:w-18 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-slate-200/80 bg-blue-50">
+                <img src="images/ref_card_compass.png" alt="Vision and Mission Compass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <!-- Text Details on Right -->
+              <div class="flex-1 min-w-0 space-y-0.5">
+                <span class="text-[9px] uppercase font-bold tracking-wider text-maroon block">IGNATIAN CHARTER</span>
+                <h3 class="font-serif font-bold text-[13px] text-navy group-hover:text-maroon transition-colors leading-snug">
+                  Vision and Mission
+                </h3>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                  VISION STATEMENT of the Goa Province Jesuits: We the Jesuits of the Goa Province, in fidelity to our vocation as servants of Christ's mission, are sent to build human communities imbued with values of Justice, Love and Truth.
+                </p>
+                <div class="pt-1 text-right">
+                  <a href="about-us/vision-and-mission/index.html" class="text-[11px] font-bold text-maroon hover:underline inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                    <span>Read Vision Statement</span>
+                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Society of Jesus -->
+          <article class="bg-white/95 backdrop-blur-xs rounded-xl p-3 sm:p-3.5 border border-slate-200/90 shadow-md hover:shadow-lg transition-all duration-300 group">
+            <div class="flex items-start gap-3">
+              <!-- Thumbnail on Left -->
+              <div class="w-16 h-18 sm:w-18 sm:h-20 shrink-0 rounded-lg overflow-hidden border border-slate-200/80 bg-orange-50">
+                <img src="images/ref_card_cross.png" alt="Society of Jesus Cross" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <!-- Text Details on Right -->
+              <div class="flex-1 min-w-0 space-y-0.5">
+                <span class="text-[9px] uppercase font-bold tracking-wider text-maroon block">THE JESUIT ORDER</span>
+                <h3 class="font-serif font-bold text-[13px] text-navy group-hover:text-maroon transition-colors leading-snug">
+                  Society of Jesus
+                </h3>
+                <p class="text-[11px] text-slate-500 leading-snug">
+                  Founded half a millennium ago by Ignatius Loyola. Committed to education as a profound instrument for intellectual competence and compassion for the underprivileged.
+                </p>
+                <div class="pt-1 text-right">
+                  <a href="about-us/management/society-of-jesus/index.html" class="text-[11px] font-bold text-maroon hover:underline inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                    <span>About the Jesuits</span>
+                    <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Organic Wave & Maroon Ribbon Transition with Hatched Texture -->
+    <div class="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none pointer-events-none z-20">
+      <svg viewBox="0 0 1440 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block" preserveAspectRatio="none">
+        <defs>
+          <pattern id="diagonalHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="8" stroke="#FFFFFF" stroke-width="0.8" opacity="0.22" />
+          </pattern>
+          <linearGradient id="maroonSwoosh" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#800B22" />
+            <stop offset="50%" stop-color="#A51330" />
+            <stop offset="100%" stop-color="#6F091E" />
+          </linearGradient>
+        </defs>
+        <!-- Swoosh Ribbon -->
+        <path d="M 0 50 Q 360 15 760 90 T 1440 25 L 1440 160 L 0 160 Z" fill="url(#maroonSwoosh)" />
+        <path d="M 0 50 Q 360 15 760 90 T 1440 25" stroke="#FFBE2E" stroke-width="2.5" opacity="0.85" fill="none" />
+        <!-- Dotted/Hatched Texture on Right Wing of Swoosh behind Card 3 -->
+        <path d="M 920 85 Q 1180 55 1440 25 L 1440 120 Q 1180 115 920 85 Z" fill="url(#diagonalHatch)" />
+        <!-- Deep Navy Foundation Beneath Swoosh -->
+        <path d="M 0 75 Q 360 40 760 115 T 1440 50 L 1440 160 L 0 160 Z" fill="#031E39" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. INSTITUTIONS (DRAMATIC NAVY BANNER)     -->
+  <!-- ========================================== -->
+  <section class="relative z-20 pt-4 sm:pt-6 pb-28 sm:pb-36 lg:pb-44 text-white overflow-hidden" 
+           style="background: linear-gradient(105deg, #031E39 0%, #053055 42%, #073B66 70%, #031E39 100%);">
+    
+    <!-- Subtle Engraved Texture Overlay -->
+    <div class="absolute inset-0 opacity-10 bg-pattern-dots pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        
+        <!-- Left Side Network Content (5 cols) -->
+        <div class="lg:col-span-5 space-y-3 z-10 py-4 sm:py-6">
+          <!-- Gold Tag -->
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-0.5 bg-gold"></span>
+            <span class="text-gold text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase">OUR NETWORK</span>
+            <span class="w-6 h-0.5 bg-gold"></span>
+          </div>
+
+          <!-- Large White Serif Heading -->
+          <h2 class="font-serif font-black text-2xl sm:text-3xl lg:text-[40px] text-white tracking-wide leading-tight">
+            ST. PAUL’S INSTITUTIONS
+          </h2>
+
+          <!-- Subtitle -->
+          <p class="text-xs sm:text-sm text-blue-100/90 font-light pb-2">
+            "In All Things Love and Serve" • Belagavi, Karnataka
+          </p>
+
+          <!-- Gold CTA Button -->
+          <div class="pt-1">
+            <a href="academics/member-institutions/index.html" class="inline-flex items-center gap-2.5 bg-[#FFBE2E] hover:bg-[#ffc84d] text-navy font-bold text-xs sm:text-[13px] px-5 py-2.5 rounded-md shadow hover:shadow-md transition-all group">
+              <span>Explore Our Institutions</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Panorama Asset: Building + Sky + Calligraphy + Seal (7 cols) -->
+        <div class="lg:col-span-7 relative flex items-center justify-end">
+          <div class="relative w-full flex items-center justify-end">
+            <img src="images/ref_inst_panorama_clean.png" 
+                 alt="St. Paul's Campus Institutions Panorama" 
+                 class="w-full max-w-[760px] h-auto object-contain select-none" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. NEWS AND EVENTS (EDITORIAL DASHBOARD)  -->
+  <!-- ========================================== -->
+  <section class="relative z-30 pt-0 pb-3 sm:pb-4 bg-gradient-to-b from-[#FFFDF9] via-[#FBF7F0] to-[#F5EFE6]">
+    
+    <!-- Abstract watercolor washes in background corners -->
+    <div class="absolute left-0 top-12 w-72 h-72 bg-blue-100/25 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute right-0 top-20 w-80 h-80 bg-rose-100/35 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Overlapping Container with Deep Negative Top Margin -->
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 relative z-30 -mt-24 sm:-mt-32 lg:-mt-40">
+      
+      <!-- Unified White Panel Card -->
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200/90 p-5 sm:p-7 lg:p-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          
+          <!-- ========================================== -->
+          <!-- LEFT COLUMN: DAILY UPDATES (60% ~ 7 cols)  -->
+          <!-- ========================================== -->
+          <div class="lg:col-span-7 lg:border-r lg:border-slate-200/80 lg:pr-8 space-y-4">
+            
+            <!-- Header Row -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div class="flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-md bg-rose-50 text-maroon flex items-center justify-center">
+                  <i class="fa-solid fa-book-open text-xs"></i>
+                </div>
+                <h3 class="font-serif font-black text-base sm:text-lg text-navy tracking-tight">
+                  DAILY UPDATES
+                </h3>
+              </div>
+              <a href="news-and-events/index.html" class="text-xs font-semibold text-maroon hover:underline inline-flex items-center gap-1 group">
+                <span>View All Updates</span>
+                <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"></i>
+              </a>
+            </div>
+
+            <!-- Daily Updates News Items List -->
+            <div class="space-y-3.5">
+              
+              <!-- Item 1: Independence Day -->
+              <article class="flex items-center gap-3.5 sm:gap-4 p-2 rounded-xl hover:bg-slate-50/80 transition-colors group">
+                <!-- Date Badge (Soft pink) -->
+                <div class="w-13 sm:w-14 shrink-0 rounded-lg bg-[#FDF2F4] border border-[#FADCE2] py-1.5 px-1 text-center">
+                  <span class="block text-[8.5px] uppercase font-bold text-slate-400 leading-tight">AUG</span>
+                  <span class="block text-base sm:text-lg font-black text-maroon leading-tight">18</span>
+                  <span class="block text-[8.5px] text-slate-400 leading-tight font-medium">2026</span>
+                </div>
+
+                <!-- Thumbnail -->
+                <div class="w-16 h-14 sm:w-20 sm:h-15 shrink-0 rounded-lg overflow-hidden bg-slate-100 border border-slate-200/60">
+                  <img src="images/WhatsApp-Image-2026-08-18-at-6.49.56-PM-300x300.jpg" alt="80th Independence Day Celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0 space-y-0.5">
+                  <span class="text-[9.5px] uppercase font-bold text-maroon flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-maroon rounded-xs"></span>
+                    Campus News
+                  </span>
+                  <h4 class="font-bold text-[13px] sm:text-sm text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                    80th Independence Day Celebration
+                  </h4>
+                  <p class="text-[11px] sm:text-[11.5px] text-slate-500 line-clamp-2 leading-relaxed">
+                    80th Independence Day Celebrations and Farewell Programme of Mrs. Carmeline D'Mello at St. Paul's High School, Belgaum.
+                  </p>
+                </div>
+
+                <!-- Circular Action Button -->
+                <a href="news-and-events/index.html" aria-label="Read full article" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-maroon group-hover:text-maroon group-hover:bg-rose-50 transition shrink-0 ml-1">
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </article>
+
+              <hr class="border-slate-100" />
+
+              <!-- Item 2: Bunny Movement -->
+              <article class="flex items-center gap-3.5 sm:gap-4 p-2 rounded-xl hover:bg-slate-50/80 transition-colors group">
+                <!-- Date Badge -->
+                <div class="w-13 sm:w-14 shrink-0 rounded-lg bg-[#FDF2F4] border border-[#FADCE2] py-1.5 px-1 text-center">
+                  <span class="block text-[8.5px] uppercase font-bold text-slate-400 leading-tight">AUG</span>
+                  <span class="block text-base sm:text-lg font-black text-maroon leading-tight">08</span>
+                  <span class="block text-[8.5px] text-slate-400 leading-tight font-medium">2026</span>
+                </div>
+
+                <!-- Thumbnail -->
+                <div class="w-16 h-14 sm:w-20 sm:h-15 shrink-0 rounded-lg overflow-hidden bg-slate-100 border border-slate-200/60">
+                  <img src="images/f_extracurricular_scouts_1-300x116.jpg" alt="Bunny Movement Investiture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0 space-y-0.5">
+                  <span class="text-[9.5px] uppercase font-bold text-maroon flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-maroon rounded-xs"></span>
+                    Scouts
+                  </span>
+                  <h4 class="font-bold text-[13px] sm:text-sm text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                    Bunny Movement Investiture Ceremony
+                  </h4>
+                  <p class="text-[11px] sm:text-[11.5px] text-slate-500 line-clamp-2 leading-relaxed">
+                    St. Paul's Sunbeam Nursery and St. Paul's Jesuit School, Camp, Belagavi, joyfully hosted the Bunny Movement investiture ceremony.
+                  </p>
+                </div>
+
+                <!-- Circular Action Button -->
+                <a href="news-and-events/index.html" aria-label="Read full article" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-maroon group-hover:text-maroon group-hover:bg-rose-50 transition shrink-0 ml-1">
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </article>
+
+              <hr class="border-slate-100" />
+
+              <!-- Item 3: Starting New Academic Year -->
+              <article class="flex items-center gap-3.5 sm:gap-4 p-2 rounded-xl hover:bg-slate-50/80 transition-colors group">
+                <!-- Date Badge -->
+                <div class="w-13 sm:w-14 shrink-0 rounded-lg bg-[#FDF2F4] border border-[#FADCE2] py-1.5 px-1 text-center">
+                  <span class="block text-[8.5px] uppercase font-bold text-slate-400 leading-tight">JUN</span>
+                  <span class="block text-base sm:text-lg font-black text-maroon leading-tight">01</span>
+                  <span class="block text-[8.5px] text-slate-400 leading-tight font-medium">2026</span>
+                </div>
+
+                <!-- Thumbnail -->
+                <div class="w-16 h-14 sm:w-20 sm:h-15 shrink-0 rounded-lg overflow-hidden bg-slate-100 border border-slate-200/60">
+                  <img src="images/f_academics_annual_1-300x116.jpg" alt="Starting New Academic Year" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0 space-y-0.5">
+                  <span class="text-[9.5px] uppercase font-bold text-maroon flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-maroon rounded-xs"></span>
+                    Term Commencement
+                  </span>
+                  <h4 class="font-bold text-[13px] sm:text-sm text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                    Starting the New Academic Year
+                  </h4>
+                  <p class="text-[11px] sm:text-[11.5px] text-slate-500 line-clamp-2 leading-relaxed">
+                    Welcome to an exciting new school year! A brand-new grade means a whole fresh start and high academic dedication.
+                  </p>
+                </div>
+
+                <!-- Circular Action Button -->
+                <a href="news-and-events/index.html" aria-label="Read full article" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-maroon group-hover:text-maroon group-hover:bg-rose-50 transition shrink-0 ml-1">
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </article>
+
+              <hr class="border-slate-100" />
+
+              <!-- Item 4: Welcoming New Principal -->
+              <article class="flex items-center gap-3.5 sm:gap-4 p-2 rounded-xl hover:bg-slate-50/80 transition-colors group">
+                <!-- Date Badge -->
+                <div class="w-13 sm:w-14 shrink-0 rounded-lg bg-[#FDF2F4] border border-[#FADCE2] py-1.5 px-1 text-center">
+                  <span class="block text-[8.5px] uppercase font-bold text-slate-400 leading-tight">MAY</span>
+                  <span class="block text-base sm:text-lg font-black text-maroon leading-tight">29</span>
+                  <span class="block text-[8.5px] text-slate-400 leading-tight font-medium">2026</span>
+                </div>
+
+                <!-- Thumbnail -->
+                <div class="w-16 h-14 sm:w-20 sm:h-15 shrink-0 rounded-lg overflow-hidden bg-slate-100 border border-slate-200/60">
+                  <img src="images/Fr-Eric-Mathias-SJ-243x300.jpg" alt="Welcoming New Principal" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1 min-w-0 space-y-0.5">
+                  <span class="text-[9.5px] uppercase font-bold text-maroon flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-maroon rounded-xs"></span>
+                    Appointment
+                  </span>
+                  <h4 class="font-bold text-[13px] sm:text-sm text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                    Welcoming Our New Principal
+                  </h4>
+                  <p class="text-[11px] sm:text-[11.5px] text-slate-500 line-clamp-2 leading-relaxed">
+                    Our school community is thrilled to announce the arrival of our new principal, Fr. Eric Harry Mathias S.J.
+                  </p>
+                </div>
+
+                <!-- Circular Action Button -->
+                <a href="about-us/management/principal/index.html" aria-label="Read full article" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-maroon group-hover:text-maroon group-hover:bg-rose-50 transition shrink-0 ml-1">
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+              </article>
+
+            </div>
+
+          </div>
+
+          <!-- ========================================== -->
+          <!-- RIGHT COLUMN: UPCOMING EVENTS (40% ~ 5 cols) -->
+          <!-- ========================================== -->
+          <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+            
+            <div class="space-y-3.5">
+              <!-- Header Row -->
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-md bg-rose-50 text-maroon flex items-center justify-center">
+                    <i class="fa-regular fa-calendar-days text-xs"></i>
+                  </div>
+                  <h3 class="font-serif font-black text-base sm:text-lg text-navy tracking-tight">
+                    UPCOMING EVENTS
+                  </h3>
+                </div>
+                <a href="news-and-events/index.html" class="text-xs font-semibold text-maroon hover:underline inline-flex items-center gap-1 group">
+                  <span>View All Events</span>
+                  <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
+              </div>
+
+              <!-- 4 Event Rows -->
+              <div class="space-y-3">
+                
+                <!-- Event 1 -->
+                <div class="flex items-start gap-3 p-1 rounded-lg hover:bg-slate-50 transition-colors group">
+                  <div class="w-12 shrink-0 text-center py-1 rounded bg-[#FDF2F4] border border-[#FADCE2]">
+                    <span class="block text-[8px] uppercase font-bold text-slate-400 leading-none">JUL</span>
+                    <span class="block text-sm font-black text-maroon leading-tight">22</span>
+                    <span class="block text-[8px] text-slate-400 leading-none">2026</span>
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <h4 class="font-bold text-[12.5px] text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                      Celebrating 170 Years of St. Paul's
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+                      To celebrate 170 years of excellence, St. Paul's institutions organise historical exhibitions and campus tours.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="flex items-start gap-3 p-1 rounded-lg hover:bg-slate-50 transition-colors group">
+                  <div class="w-12 shrink-0 text-center py-1 rounded bg-[#FDF2F4] border border-[#FADCE2]">
+                    <span class="block text-[8px] uppercase font-bold text-slate-400 leading-none">JUL</span>
+                    <span class="block text-sm font-black text-maroon leading-tight">01</span>
+                    <span class="block text-[8px] text-slate-400 leading-none">2026</span>
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <h4 class="font-bold text-[12.5px] text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                      Paulite Cup U14 Football Tournament
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+                      St. Paul's organises the annual inter-school football tournament on the school grounds.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="flex items-start gap-3 p-1 rounded-lg hover:bg-slate-50 transition-colors group">
+                  <div class="w-12 shrink-0 text-center py-1 rounded bg-[#FDF2F4] border border-[#FADCE2]">
+                    <span class="block text-[8px] uppercase font-bold text-slate-400 leading-none">NOV</span>
+                    <span class="block text-sm font-black text-maroon leading-tight">06</span>
+                    <span class="block text-[8px] text-slate-400 leading-none">2026</span>
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <h4 class="font-bold text-[12.5px] text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                      KRONOS Inter-School Festival
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+                      The Mythological Summit: The Birth of a New Pantheon.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="flex items-start gap-3 p-1 rounded-lg hover:bg-slate-50 transition-colors group">
+                  <div class="w-12 shrink-0 text-center py-1 rounded bg-[#FDF2F4] border border-[#FADCE2]">
+                    <span class="block text-[8px] uppercase font-bold text-slate-400 leading-none">NOV</span>
+                    <span class="block text-sm font-black text-maroon leading-tight">04</span>
+                    <span class="block text-[8px] text-slate-400 leading-none">2026</span>
+                  </div>
+                  <div class="space-y-0.5 flex-1 min-w-0">
+                    <h4 class="font-bold text-[12.5px] text-navy group-hover:text-maroon transition-colors line-clamp-1">
+                      ParyavaRun – 2nd Edition 2026
+                    </h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2">
+                      Green City, Clean City – Let's Run for Our Dream City in Belagavi.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Pre-Admissions Pink Gradient Card at Bottom -->
+            <div class="bg-gradient-to-br from-[#FFF5F6] via-[#FDF0F3] to-[#FCE7EB] rounded-xl p-4 sm:p-5 border border-rose-200/70 shadow-xs space-y-3 mt-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-rose-100/70 text-maroon flex items-center justify-center shrink-0">
+                  <i class="fa-regular fa-file-lines text-lg"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif font-bold text-sm text-navy leading-snug">
+                    Pre-Admission Forms 2026–27
+                  </h4>
+                  <p class="text-[11px] text-slate-500">
+                    For Sunbeam Nursery (State) and SPHS (ICSE)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <a href="https://www.sphsadmissions.in/" target="_blank" class="w-full bg-[#820B24] hover:bg-[#950F2A] text-white text-xs font-semibold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-button hover:shadow-md transition">
+                <span>Go to Admissions Portal</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. SOCIAL MEDIA (THREE EQUAL PREMIUM CARDS)-->
+  <!-- ========================================== -->
+  <section class="relative z-30 pt-2 sm:pt-4 pb-8 sm:pb-12 bg-gradient-to-b from-[#F5EFE6] via-[#FAF6F0] to-[#FFFDF9] overflow-hidden">
+    
+    <!-- Left Halftone Dot Matrix Pattern matching reference -->
+    <div class="absolute left-4 top-1/2 -translate-y-1/2 w-48 h-48 opacity-25 bg-pattern-dots pointer-events-none"></div>
+    <!-- Right Warm Peach/Rose decorative swoosh -->
+    <div class="absolute -right-16 top-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-l from-rose-200/40 via-amber-100/20 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- CARD 1: YOUTUBE -->
+        <article class="bg-white rounded-xl border border-slate-200/80 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group h-full">
+          <div class="space-y-3">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i class="fa-brands fa-youtube text-red-600 text-lg"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-navy">ST. PAUL’S YOUTUBE</span>
+              </div>
+              <span class="text-[11px] text-slate-400 font-medium">4.2K Subscribers</span>
+            </div>
+
+            <!-- Video Thumbnail Box with Centered Red Play Button -->
+            <div class="relative w-full h-44 sm:h-48 rounded-lg overflow-hidden bg-slate-900 group/thumb">
+              <img src="images/f_academics_pop_1-1024x397.jpg" alt="Voice of Voiceless Video Broadcast" class="w-full h-full object-cover opacity-85 group-hover/thumb:scale-105 transition-transform duration-500" />
+              <!-- Dark Overlay -->
+              <div class="absolute inset-0 bg-black/30 group-hover/thumb:bg-black/20 transition-colors"></div>
+              <!-- Red Play Button -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover/thumb:scale-110 transition-transform">
+                  <i class="fa-solid fa-play text-sm pl-0.5"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="space-y-1">
+              <h4 class="font-bold text-xs text-slate-800 line-clamp-1">
+                [[Voice of Voiceless]] Mr. Satish Baburao Bochikre & Master Sarvesh...
+              </h4>
+              <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                Official channel broadcast from St. Paul's High School Belgaum.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Link -->
+          <div class="pt-3 text-right">
+            <a href="https://www.youtube.com/@stpaulshighschoolbelgaum" target="_blank" class="text-xs font-bold text-maroon hover:underline inline-flex items-center gap-1">
+              <span>Watch Channel</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD 2: FACEBOOK -->
+        <article class="bg-white rounded-xl border border-slate-200/80 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group h-full">
+          <div class="space-y-3">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <i class="fa-brands fa-facebook text-blue-600 text-lg"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-navy">OFFICIAL FACEBOOK</span>
+              </div>
+              <span class="text-[11px] text-slate-400 font-medium">3,406 Followers</span>
+            </div>
+
+            <!-- Post Details -->
+            <div class="space-y-1">
+              <h4 class="font-bold text-xs text-slate-800">
+                St. Paul's High School – Belgaum
+              </h4>
+              <p class="text-[11px] text-slate-500 line-clamp-3 leading-relaxed">
+                Road Safety Initiative Launched: The school launched the 'Joy of Learning', the school launched the Road Safety Initiative and held the Investiture Ceremony of the Road Safety Patrolling Team at the Grand Assembly.
+              </p>
+            </div>
+
+            <!-- Horizontal Image Strip (3 Images) matching reference -->
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/WhatsApp-Image-2026-08-18-at-6.49.56-PM-300x300.jpg" alt="Facebook Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/WhatsApp-Image-2026-08-08-at-7.08.01-PM-300x200.jpg" alt="Facebook Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/f_academics_annual_1-300x116.jpg" alt="Facebook Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Link -->
+          <div class="pt-3 text-right">
+            <a href="https://www.facebook.com/stpaulshighschoolbelgaum" target="_blank" class="text-xs font-bold text-blue-600 hover:underline inline-flex items-center gap-1">
+              <span>Follow on Facebook</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD 3: INSTAGRAM -->
+        <article class="bg-white rounded-xl border border-slate-200/80 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group h-full">
+          <div class="space-y-3">
+            <!-- Header -->
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white text-[11px]">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-navy">OFFICIAL INSTAGRAM</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-medium">@stpaulshighschoolbelgaum</span>
+            </div>
+
+            <!-- Post Details -->
+            <div class="space-y-1">
+              <h4 class="font-bold text-xs text-slate-800">
+                INVENTO – Science Exhibition 2026
+              </h4>
+              <p class="text-[11px] text-slate-500 line-clamp-3 leading-relaxed">
+                St. Paul's Primary Section successfully organized INVENTO 2026 at Mapai Hall, providing learners a platform to showcase creative problem-solving and innovation.
+              </p>
+            </div>
+
+            <!-- Horizontal Image Strip (3 Images) matching reference -->
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/f_smartclass-300x116.jpg" alt="Instagram Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/f_computerlab-300x116.jpg" alt="Instagram Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="h-20 sm:h-22 rounded-md overflow-hidden bg-slate-100 border border-slate-200/60">
+                <img src="images/f_extracurricular_scouts_1-300x116.jpg" alt="Instagram Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Link -->
+          <div class="pt-3 text-right">
+            <a href="https://www.instagram.com/stpaulshighschoolbelgaum" target="_blank" class="text-xs font-bold text-rose-600 hover:underline inline-flex items-center gap-1">
+              <span>View on Instagram</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- Organic Wave Boundary Transition to Alumni Section with gold rim -->
+    <div class="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block" preserveAspectRatio="none">
+        <path d="M 0 45 C 380 15, 760 55, 1440 20 L 1440 60 L 0 60 Z" fill="#031E39"></path>
+        <path d="M 0 45 C 380 15, 760 55, 1440 20" stroke="#FFBE2E" stroke-width="2.5" opacity="0.85" fill="none"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. ALUMNI (DARK NAVY CINEMATIC BANNER)     -->
+  <!-- ========================================== -->
+  <section class="relative z-30 pt-8 sm:pt-10 pb-8 sm:pb-12 bg-[#041C35] text-white overflow-hidden" 
+           style="background: linear-gradient(105deg, #031E39 0%, #053055 50%, #041C35 100%);">
+    
+    <!-- Faded Alumni Group Background Image with High Luminosity -->
+    <div class="absolute inset-0 z-0">
+      <img src="images/ref_alumni_banner_bg.png" alt="Paulite Alumni Gathering" 
+           class="w-full h-full object-cover opacity-45 mix-blend-luminosity pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#031E39]/95 via-[#053055]/80 to-[#041C35]/85"></div>
+    </div>
+
+    <!-- Jesuit Crest Watermark on Left -->
+    <img src="images/SPHS-Logo.png" alt="" class="absolute left-6 top-1/2 -translate-y-1/2 w-48 h-48 object-contain opacity-15 filter brightness-0 invert pointer-events-none z-0" />
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        
+        <!-- Left Narrative -->
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="text-gold text-[10.5px] sm:text-xs font-bold tracking-[0.22em] uppercase">OFFICIAL ALUMNI ASSOCIATION • MID 1940'S</span>
+          </div>
+
+          <h2 class="font-serif font-black text-2xl sm:text-3xl lg:text-[32px] text-white tracking-wide leading-tight">
+            Paulites of Belgaum Worldwide (PBW)
+          </h2>
+
+          <p class="text-xs sm:text-sm text-blue-100/85 leading-relaxed font-light">
+            The Paulite Link is the official alumni magazine of St. Paul's High School published bi-annually in June and December.
+          </p>
+        </div>
+
+        <!-- Right Side Dual Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3.5 shrink-0">
+          <!-- Gold Filled Button -->
+          <a href="alumni/paulite-link/index.html" class="inline-flex items-center justify-center bg-[#FFBE2E] hover:bg-[#ffc84d] text-navy font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md shadow-sm transition">
+            PAULITE LINK MAGAZINE
+          </a>
+
+          <!-- Navy Outlined Button -->
+          <a href="alumni/index.html" class="inline-flex items-center justify-center border border-white/70 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md transition">
+            ALUMNI PBW
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER (CLEAN INSTITUTIONAL STYLE)      -->
+  <!-- ========================================== -->
+  <footer class="bg-white border-t border-slate-200 text-slate-700 relative z-30 pt-10 pb-6">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6">
+      
+      <!-- 4-Column Grid with subtle vertical separators -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-100 text-xs">
+        
+        <!-- Column 1: FOLLOW US -->
+        <div class="space-y-3 lg:border-r lg:border-slate-100 lg:pr-6">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-navy">
+            FOLLOW US
+          </h4>
+          <p class="text-[11.5px] text-slate-500 leading-relaxed">
+            Follow us on our verified official institutional accounts.
+          </p>
+          <!-- Social Icons in Circles -->
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://www.facebook.com/stpaulshighschoolbelgaum" target="_blank" aria-label="Facebook" class="w-7 h-7 rounded-full border border-blue-200 text-blue-600 flex items-center justify-center hover:bg-blue-50 transition">
+              <i class="fa-brands fa-facebook-f text-xs"></i>
+            </a>
+            <a href="https://x.com/stpaulshighschoolbelgaum" target="_blank" aria-label="Twitter X" class="w-7 h-7 rounded-full border border-slate-300 text-slate-800 flex items-center justify-center hover:bg-slate-100 transition">
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </a>
+            <a href="https://www.instagram.com/stpaulshighschoolbelgaum" target="_blank" aria-label="Instagram" class="w-7 h-7 rounded-full border border-rose-200 text-rose-600 flex items-center justify-center hover:bg-rose-50 transition">
+              <i class="fa-brands fa-instagram text-xs"></i>
+            </a>
+            <a href="https://www.youtube.com/@stpaulshighschoolbelgaum" target="_blank" aria-label="YouTube" class="w-7 h-7 rounded-full border border-red-200 text-red-600 flex items-center justify-center hover:bg-red-50 transition">
+              <i class="fa-brands fa-youtube text-xs"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="w-7 h-7 rounded-full border border-blue-200 text-blue-700 flex items-center justify-center hover:bg-blue-50 transition">
+              <i class="fa-brands fa-linkedin-in text-xs"></i>
+            </a>
+            <a href="mockups.html" aria-label="Mockups Directory" class="w-7 h-7 rounded-full border border-slate-300 text-slate-600 flex items-center justify-center hover:bg-slate-100 transition">
+              <i class="fa-solid fa-link text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: LOGIN TO YOUR ACCOUNT -->
+        <div class="space-y-3 lg:border-r lg:border-slate-100 lg:px-4">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-navy">
+            LOGIN TO YOUR ACCOUNT
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://paulhigh.schoolphins.com/staff/" target="_blank" class="hover:text-maroon transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-arrow-right text-[9px] text-gold"></i>
+                <span>Staff Login</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://paulhigh.schoolphins.com/student/" target="_blank" class="hover:text-maroon transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-arrow-right text-[9px] text-gold"></i>
+                <span>Student Login</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.sphsadmissions.in/" target="_blank" class="hover:text-maroon transition-colors flex items-center gap-2 font-medium text-maroon">
+                <i class="fa-solid fa-arrow-right text-[9px] text-gold"></i>
+                <span>Online Admissions</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: MEMBER INSTITUTIONS -->
+        <div class="space-y-3 lg:border-r lg:border-slate-100 lg:px-4">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-navy">
+            MEMBER INSTITUTIONS
+          </h4>
+          <ul class="space-y-2 text-slate-600">
+            <li>
+              <a href="academics/member-institutions/index.html#inigo" class="hover:text-maroon transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-chevron-right text-[8px] text-slate-400"></i>
+                <span>Inigo Play School</span>
+              </a>
+            </li>
+            <li>
+              <a href="academics/member-institutions/index.html#sunbeam" class="hover:text-maroon transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-chevron-right text-[8px] text-slate-400"></i>
+                <span>Sunbeam Nursery</span>
+              </a>
+            </li>
+            <li>
+              <a href="academics/member-institutions/index.html#icse" class="hover:text-maroon transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-chevron-right text-[8px] text-slate-400"></i>
+                <span>St. Paul's Jesuit School (ICSE)</span>
+              </a>
+            </li>
+            <li>
+              <a href="academics/member-institutions/index.html#sslc" class="hover:text-maroon transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-chevron-right text-[8px] text-slate-400"></i>
+                <span>St. Paul's High School (SSLC)</span>
+              </a>
+            </li>
+            <li>
+              <a href="academics/member-institutions/index.html#puc" class="hover:text-maroon transition-colors flex items-center gap-1.5">
+                <i class="fa-solid fa-chevron-right text-[8px] text-slate-400"></i>
+                <span>Pre-University College (PUC)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: CONTACT US -->
+        <div class="space-y-3 lg:pl-4">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-navy">
+            CONTACT US
+          </h4>
+          <ul class="space-y-2.5 text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-location-dot text-maroon text-xs mt-0.5 shrink-0"></i>
+              <span class="leading-relaxed">E W Fernandes Road, Camp,<br>Belagavi – 590 001, Karnataka, India</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-maroon text-xs shrink-0"></i>
+              <a href="tel:+918312422533" class="hover:text-maroon transition-colors">+91 831 242 2533 / +91 831 243 7244</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-maroon text-xs shrink-0"></i>
+              <a href="mailto:stpaulsbym0@gmail.com" class="hover:text-maroon transition-colors">stpaulsbym0@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400 font-medium">
+        <p>
+          Copyright © 2026 St. Paul’s High School. All rights reserved.
+        </p>
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="hover:text-navy transition-colors">Original Site Archive</a>
+          <span>•</span>
+          <a href="mockups.html" class="text-maroon font-bold hover:underline">Mockups Hub</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <h3 class="font-serif font-bold text-navy text-base">Search St. Paul's High School</h3>
+        <button id="close-search-btn" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <form action="index.html" method="get" class="flex gap-2">
+        <input type="text" name="s" placeholder="Search notices, events, admissions..." class="flex-1 border border-slate-200 rounded-lg px-4 py-2.5 text-xs focus:outline-none focus:border-maroon" />
+        <button type="submit" class="bg-maroon text-white px-5 py-2.5 rounded-lg text-xs font-semibold hover:bg-maroon-dark transition">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Interactivity -->
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+    }
+
+    // Search modal toggle
+    const searchBtn = document.getElementById('search-toggle-btn');
+    const searchModal = document.getElementById('search-modal');
+    const closeSearchBtn = document.getElementById('close-search-btn');
+
+    if (searchBtn && searchModal && closeSearchBtn) {
+      searchBtn.addEventListener('click', () => {
+        searchModal.classList.remove('hidden');
+      });
+      closeSearchBtn.addEventListener('click', () => {
+        searchModal.classList.add('hidden');
+      });
+      searchModal.addEventListener('click', (e) => {
+        if (e.target === searchModal) {
+          searchModal.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
